@@ -6,7 +6,7 @@ host: "localhost",
 user: "root", 
 password: "", 
 database: "db_mensfashionstore" 
-}); 
+});  
 
 router.get('/',(req,res,next)=>{ 
     let strquery = `SELECT b.brand_name, b.brand_image, COUNT(*) AS total_bookings
