@@ -1,0 +1,9 @@
+/* If stock is 0 or below */
+.product__item__text .out-of-stock {
+    color: red;
+}
+
+/* If stock is less than or equal to 3 */
+.product__item__text .only-left {
+    color: green;
+}

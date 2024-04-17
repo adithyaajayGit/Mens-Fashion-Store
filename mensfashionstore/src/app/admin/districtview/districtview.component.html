@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title fw-semibold mb-4">Forms</h5>
+          <div class="card">
+            <div class="card-body">
+              <form >
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"> District View</label>
+                  </div>
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">District Name</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr  *ngFor="let data of districtdata,let i=index">
+                        <td> {{i+1}} </td>
+                        <td> {{data.district_name}} </td>
+                        <td>    
+                        <button type="button" class="btn btn-outline-success m-1" [routerLink]="['/adminmaster/editdistrict',data.district_id]"><i class="ti ti-edit"></i></button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-outline-danger m-1" (click)="Deletedistrictdata(data.district_id)"><i class="ti ti-trash"></i></button>
+                          
+                        </td>
+                    </tbody>
+                  </table>
+                  <button type="submit" class="btn btn-primary" [routerLink]="['/adminmaster/districtreg']">ADD</button>
+              </form>
+            </div>
+          <!-- </div> -->
+          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

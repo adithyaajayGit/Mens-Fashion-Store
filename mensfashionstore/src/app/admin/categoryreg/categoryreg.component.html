@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title fw-semibold mb-4">Forms</h5>
+          <div class="card">
+            <div class="card-body">
+              <form [formGroup]="categoryregform" enctype="multipart/form-data">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"> Category Registration</label>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Category</label>
+                  <input type="text" class="form-control" placeholder="enter category name" formControlName="category_name" exampleInputPassword1>
+                </div>
+                <div class="mb-3">
+                  <label for="formFile" class="form-label">Category Image</label>
+                  <input class="form-control" type="file" formControlName="category_image" (change)="selectFile($event)" id="formFile">
+                </div>
+                
+                <button type="submit" class="btn btn-primary" (click)="Onsubmit()">Submit</button>
+              </form>
+            </div>
+          <!-- </div> -->
+          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

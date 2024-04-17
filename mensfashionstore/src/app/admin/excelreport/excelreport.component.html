@@ -1,0 +1,86 @@
+<!-- end topbar -->
+<!-- dashboard inner -->
+<br><br>
+<br>
+<br>
+
+<div class="midde_cont">
+    <div class="container-fluid">
+    <div class="row column_title">
+    <div class="col-md-12">
+    <div class="page_title">
+    <!-- <h2>Project</h2> -->
+    </div>
+    </div>
+    </div>
+    <!-- row -->
+    <div class="row column1">
+    <div class="col-md-12">
+    <div class="white_shd full margin_bottom_30">
+    <div class="full graph_head">
+    <div class="heading1 margin_0">
+    <h3>Product Details<small></small></h3>
+    </div>
+    </div>
+    <div class="full price_table padding_infor_info" >
+        <div class="row">
+        <div class="col-md-10">
+        <div class="input-group mb-3">
+        <!-- <select class="custom-select" id="inputGroupSelect01">
+        <option selected>Choose 
+        Category</option>
+        <option value="0" >0</option>
+        </select> -->
+        </div>
+        </div>
+        <div class="col-md-2">
+        <button (click)="ExportTOExcel()" class="btn btn-success">ExportTOExcel</button>
+        </div>
+        </div>
+        <br>
+        <div class="row">
+        <div class="col-lg-12">
+        <div class="table-responsive-sm" #TABLE #table>
+        <table class="table table-striped projects">
+        <thead class="thead-dark">
+        <tr>
+        <th style="width: 2%">No</th>
+        <th>Customer Name </th>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>booking_date</th>
+
+        <!-- <th>Action</th> -->
+        <!-- <th>Description</th>
+        <th>Action </th> -->
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let data of Registrationdata,let 
+        i=index">
+        <td><a>{{i+1}}</a></td>
+        <td>{{data.login_username}}</td>
+        <td>{{data.product_name}}</td>
+        <td>{{data.quantity}}</td>
+        <td>{{data.total_price}}</td>
+        <td>{{data.booking_date|date:"dd-MM-YYYY"}}</td>
+
+<!-- <td> <a 
+[routerLink]="['/AdminMaster/productedit',data.productid]"> 
+<button class="btn btn-success">Edit</button></a>
+<button class="btn btn-danger" 
+(click)="Deleteproductdata(data.productid)">Delete</button></td>
+-->
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- end row -->
+</div>
+            

@@ -1,0 +1,53 @@
+<div class="container-fluid">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title fw-semibold mb-4">Forms</h5>
+          <div class="card">
+            <div class="card-body">
+              <form [formGroup]="productregform" enctype="multipart/form-data">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"> Product Registration</label>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Category</label>
+                  <select class="form-select" formControlName="category_id" aria-label="Default select example">
+                    <option *ngFor="let data of categorydata" value="{{data.category_id}}">{{data.category_name}}</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Brand</label>
+                    <select class="form-select" formControlName="brand_id" aria-label="Default select example">
+                      <option *ngFor="let data of branddata" value="{{data.brand_id}}">{{data.brand_name}}</option>
+                    </select>
+                  </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Product Name</label>
+                    <input type="text" class="form-control" placeholder="enter product name" formControlName="product_name" exampleInputPassword1>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Product size</label>
+                    <input type="text" class="form-control" placeholder="enter product size" formControlName="product_size" exampleInputPassword1>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Product Colour</label>
+                    <input type="text" class="form-control" placeholder="enter product colour" formControlName="product_colour" exampleInputPassword1>
+                  </div>
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label">Product Image</label>
+                    <input class="form-control" type="file" formControlName="product_image" (change)="selectFile($event)" id="formFile">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Product price</label>
+                    <input type="text" class="form-control" placeholder="enter product price" formControlName="product_price" exampleInputPassword1>
+                  </div>
+                <button type="submit"  class="btn btn-primary" (click)="Onsubmit()">Submit</button>
+              </form>
+            </div>
+          <!-- </div> -->
+          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

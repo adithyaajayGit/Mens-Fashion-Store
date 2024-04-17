@@ -1,0 +1,85 @@
+<section class="contact-area section-padding-100-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <!-- Section Heading -->
+                <div class="section-heading text-center">
+                    <h2>Profile</h2>
+                </div>
+                <br>
+                <!-- Registration Form -->
+                <div class="card" >
+                    <div class="card-body">
+                        <!-- Bordered Tabs -->
+                        <ul class="nav nav-tabs nav-tabs-bordered">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-bs-toggle="tab" >Overview</a>
+                            </li>
+                            <li class="nav-item">
+                                <a [routerLink]="['/customermaster/editprofile',userdata[0].customer_id]" class="nav-link" data-bs-toggle="tab" >Edit Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a [routerLink]="['/customermaster/changepassword']" class="nav-link" data-bs-toggle="tab"  >Change Password</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content pt-2" *ngFor="let data of userdata">
+                            <!-- Profile Overview Tab -->
+                            <div class="tab-pane fade show active" id="profile-overview">
+                                <!-- Display user's profile overview here -->
+                                <h5 class="card-title">About</h5>
+                                <h4>{{data.login_username}}</h4>
+                                <br>
+
+                                <h5 class="card-title">Profile Details</h5>
+                                <!-- Display user's profile details here -->
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label"> Name</div>
+                                    <div class="col-lg-9 col-md-8">{{data.customer_name}}</div>
+                                </div>
+                                <!-- Add more profile details as needed -->
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label">Email</div>
+                                    <div class="col-lg-9 col-md-8">{{data.customer_email}}</div>
+                                </div>
+                                <!-- Add more profile details as needed -->
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label">Mob No</div>
+                                    <div class="col-lg-9 col-md-8">{{data.customer_contactno}}</div>
+                                </div>
+                                <!-- Add more profile details as needed -->
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label">District</div>
+                                    <div class="col-lg-9 col-md-8">{{data.district_name}}</div>
+                                </div>
+                                <!-- Add more profile details as needed -->
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label">Location</div>
+                                    <div class="col-lg-9 col-md-8">{{data.location_name}}</div>
+                                </div>
+                                <!-- Add more profile details as needed -->
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-4 label">Pin code</div>
+                                    <div class="col-lg-9 col-md-8">{{data.customer_pincode}}</div>
+                                </div>
+                                <!-- Add more profile details as needed -->
+                                
+                            </div>
+                            <!-- End Profile Overview Tab -->
+
+                            <!-- Edit Profile Tab -->
+                            <div class="tab-pane fade" id="edit-profile">
+                                <!-- Edit profile form or content goes here -->
+                                <form>
+                                    <!-- Add form fields or content here -->
+                                </form>
+                            </div>
+                            <!-- End Edit Profile Tab -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<br><br>

@@ -1,0 +1,18 @@
+.header__top__hover ul {
+    width: 90px; /* Set the width of the ul */
+}
+
+.header__top__hover ul li {
+    width: 100%; /* Set the width of each li to be 100% of the ul */
+    box-sizing: border-box; /* Make sure padding and border are included in the width */
+    padding: 10px; /* Add some padding to the li elements */
+    background-color: #f0f0f0; /* Add a background color for visibility */
+}
+.arrow_carrot-down {
+    border-color: black;
+}
+
+.arrow_carrot-down:hover {
+    border-top-color: white;
+}
+

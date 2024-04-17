@@ -1,0 +1,101 @@
+<br><br>
+<br>
+<br>
+<br>
+
+<div class="row" >
+  <div class="col-sm-6 col-xl-3" >
+    <div class="card overflow-hidden rounded-2"*ngFor="let data of categorydata"  >
+      <div class="position-relative" >
+        <a href="javascript:void(0)" ><img style="height: 300px;" src="http://localhost:3000/images/{{data.category_image}}" class="card-img-top rounded-0" alt="..."></a>
+        <a href="javascript:void(0)" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"></a>                      </div>
+      <div class="card-body pt-3 p-4">
+        <h6 class="fw-semibold fs-4">Most Booked Category</h6>
+        <div class="d-flex align-items-center justify-content-between" >
+          <h6 class="fw-semibold fs-4 mb-0">{{data.category_name}} <span class="ms-2 fw-normal text-muted fs-3">{{data.total_bookings}}</span></h6>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-xl-3">
+    <div class="card overflow-hidden rounded-2" *ngFor="let data of branddata">
+      <div class="position-relative">
+        <a href="javascript:void(0)"><img style="height: 300px;" src="http://localhost:3000/images/{{data.brand_image}}" class="card-img-top rounded-0" alt="..."></a>
+        <a href="javascript:void(0)"  data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"></a>                      </div>
+      <div class="card-body pt-3 p-4">
+        <h6 class="fw-semibold fs-4">Most Booked Brand</h6>
+        <div class="d-flex align-items-center justify-content-between">
+          <h6 class="fw-semibold fs-4 mb-0">{{data.brand_name}}<span class="ms-2 fw-normal text-muted fs-3">{{data.total_bookings}}</span></h6>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-xl-3">
+    <div class="card overflow-hidden rounded-2" *ngFor="let data of productdata">
+      <div class="position-relative">
+        <a href="javascript:void(0)"><img style="height: 300px;" src="http://localhost:3000/images/{{data.product_image}}" class="card-img-top rounded-0" alt="..."></a>
+        <a href="javascript:void(0)" ></a>                      </div>
+      <div class="card-body pt-3 p-4">
+        <h6 class="fw-semibold fs-4">Most Booked Product</h6>
+        <div class="d-flex align-items-center justify-content-between">
+          <h6 class="fw-semibold fs-4 mb-0">{{data.product_name}} <span class="ms-2 fw-normal text-muted fs-3">{{data.total_bookings}}</span></h6>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-xl-3">
+    <div class="card overflow-hidden rounded-2" *ngFor="let data of bookingdata">
+      <div class="position-relative">
+        <a href="javascript:void(0)"><img style="height: 300px;" src="../assets/admin/images/products/shirtd.jpg" class="card-img-top rounded-0" alt="..."></a>
+        <a href="javascript:void(0)" ></a>                      </div>
+      <div class="card-body pt-3 p-4">
+        <h6 class="fw-semibold fs-4">Total bookings in this month</h6>
+        <div class="d-flex align-items-center justify-content-between">
+          <h6 class="fw-semibold fs-4 mb-0">{{data.paymentCount}}  <span class="ms-2 fw-normal text-muted fs-3"></span></h6>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <!--  Row 1 -->
+ 
+  
+  <div class="row">
+    <div class="col-lg-4 d-flex align-items-stretch">
+        <div class="card w-100">
+            <div class="card-body p-4" style="width: 500px; height: 400px;">
+                <div class="mb-4">
+                    <h5 class="card-title fw-semibold">Recent Transactions</h5>
+                </div>
+                <div>
+                    <div class="row" *ngFor="let data of paymentdata.slice(0, 8)">
+                        <div class="col">
+                            <p>{{data.login_username}}</p>
+                        </div>
+                        <div class="col">
+                            <p>{{data.total_amount}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-8 d-flex align-items-stretch">
+        <div class="card w-100">
+            <div class="card-body p-4">
+                <h5 class="card-title fw-semibold mb-4">Bookings in each category</h5>
+                <div class="table-responsive">
+                    <div class="chart-container">
+                        <canvas #myChart></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

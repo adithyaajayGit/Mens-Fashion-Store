@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title fw-semibold mb-4">Forms</h5>
+          <div class="card">
+            <div class="card-body">
+              <form [formGroup]="stockeditform">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"> Stock Add</label>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Product Name</label>
+                  <input type="text" class="form-control" formControlName="product_name" exampleInputPassword1>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Current Stock</label>
+                    <input type="text" class="form-control"  formControlName="current_stock" exampleInputPassword1>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">New Stock</label>
+                    <input type="number" class="form-control" formControlName="newstock" exampleInputPassword1>
+                  </div>
+                
+                <button type="submit" class="btn btn-primary" (click)="Onsubmit()">Submit</button>
+              </form>
+            </div>
+          <!-- </div> -->
+          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

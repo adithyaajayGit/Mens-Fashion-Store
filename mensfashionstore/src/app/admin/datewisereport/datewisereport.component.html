@@ -1,0 +1,70 @@
+<form [formGroup]="reportformgroup">
+    <div class="row" style="padding-top: 200px;padding-left: 100px;">
+        <div class="col-md-3">
+            <div class="form-outline datepicker" data-mdb-inline="true">
+                <label for="exampleDatepicker2" class="form-label">Start Date</label>
+                <input type="date" class="form-control" formControlName="startdate" id="exampleDatepicker2"  [max]="maxStartDate()">
+              </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-outline datepicker" data-mdb-inline="true">
+                <label for="exampleDatepicker2" class="form-label">End Date</label>
+                <input type="date" class="form-control" formControlName="enddate" id="exampleDatepicker2" [max]="maxStartDate()">
+              </div>
+        </div>
+        <div class="col-md-3">
+            <br>
+            <button type="submit" class="btn btn-primary" (click)="OnSubmit()">Submit</button>
+
+        </div>
+    </div>
+</form>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container bootdey">
+    <div class="row bootstrap snippets">
+        <div class="clearfix visible-sm"></div>
+        <!-- Cart -->
+        <div class="col-lg-9 col-md-9 col-sm-12">
+            <div class="col-lg-12 col-sm-12"><br><br>
+                <span class="title" style="padding-left: 400px;font-size:20px;font-weight:bold">Date Wise Report</span>
+            </div>
+            <div class="col-lg-12 col-sm-12 hero-feature">
+                <div class="table-responsive">
+                    <table class="table table-bordered tbl-cart">
+                        <thead>
+                            <tr>
+                                <td class="hidden-xs">Product Image</td>
+                                <td>Product Name</td>
+                                <td>Product Rate</td>
+                                <!-- <td>Quantity</td> -->
+                                <td>Total Amount</td>
+                                <td>Booked Date</td>
+                                <!-- <td>Sub Total</td> --
+        <!-- <td>Remove</td> -->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let data of reportdetails">
+                                <td class="hidden-xs">
+                                    <a href="#"><img src="http://localhost:3000/images/{{data.product_image}}" alt=""
+                                            title="" width="47" height="47">
+                                    </a>
+                                </td>
+                                <td>{{data.product_name}}</td>
+                                <td>{{data.price}}</td>
+                                <td>{{data.total_amount}}</td>
+                                <!-- <td>{{data.quantity}}</td> -->
+                                <td>{{data.booking_date|date:"dd-MM-YYYY"}}</td>
+                                <!-- <td class="text-center">
+<a (click)="removecart(data.cart_id)" 
+class="remove_cart" rel="2"> <i
+class="fa fa-trash-o"></i></a>
+</td> -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

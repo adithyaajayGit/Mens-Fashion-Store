@@ -1,0 +1,52 @@
+<div class="container-fluid">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title fw-semibold mb-4">Forms</h5>
+          <div class="card">
+            <div class="card-body">
+              <form [formGroup]="locationviewform">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"> Location View</label>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">District</label>
+                    <select class="form-select" formControlName="district_id" aria-label="Default select example" (change)="onChange()">
+                      <option *ngFor="let data of districtdata" value="{{data.district_id}}">{{data.district_name}}</option>
+                    </select>
+
+
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Location Name</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr  *ngFor="let data of locationdata,let i=index">
+                        <td> {{i+1}} </td>
+                        <td> {{data.location_name}} </td>
+                        <td>    
+                        <button type="button" class="btn btn-outline-success m-1" [routerLink]="['/adminmaster/editlocation',data.location_id]"><i class="ti ti-edit"></i></button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-outline-danger m-1" (click)="Deletelocationdata(data.location_id)"><i class="ti ti-trash"></i></button>
+
+                        </td>
+                    </tbody>
+                  </table>
+                </div>
+                <button type="submit" class="btn btn-primary" [routerLink]="['/adminmaster/locationreg']">ADD</button>
+
+                </form>
+            </div>
+          <!-- </div> -->
+          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

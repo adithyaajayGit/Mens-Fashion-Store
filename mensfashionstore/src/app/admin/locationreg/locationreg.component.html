@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title fw-semibold mb-4">Forms</h5>
+          <div class="card">
+            <div class="card-body">
+              <form [formGroup]="locationregform">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label"> Location Registration</label>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">District</label>
+                  <select class="form-select" formControlName="district_id" aria-label="Default select example">
+                    <option *ngFor="let data of districtdata" value="{{data.district_id}}">{{data.district_name}}</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Location</label>
+                    <input type="text" class="form-control" placeholder="enter Location name" formControlName="location_name" exampleInputPassword1>
+                  </div>
+                
+                <button type="submit" (click)="Onsubmit()" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          <!-- </div> -->
+          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

@@ -1,0 +1,89 @@
+<div class="container-fluid">
+  <div class="container-fluid">
+    <div class="card">
+      <div class="card-body">
+        <!-- <h5 class="card-title fw-semibold mb-4">Forms</h5> -->
+        <div class="card">
+          <div class="card-body">
+            <form [formGroup]="profileform">
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"> Edit Profile</label>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Name</label>
+                <input type="text" class="form-control" formControlName="customer_name" exampleInputPassword1>
+
+                <div
+                  *ngIf="profileform.controls['customer_name'].invalid && (profileform.controls['customer_name'].dirty || profileform.controls['customer_name'].touched) || validationstatus">
+                  <div *ngIf="profileform.controls['customer_name'].errors['required']" style="color: red;">Please Enter
+                    Your Name </div>
+                  <div *ngIf="profileform.controls['customer_name'].errors['pattern']" style="color: red;">First letter
+                    must be Capital </div>
+                </div>
+
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Email</label>
+                <input type="text" class="form-control" formControlName="customer_email" exampleInputPassword1>
+                <div
+                  *ngIf="profileform.controls['customer_email'].invalid && (profileform.controls['customer_email'].dirty || profileform.controls['customer_email'].touched) || validationstatus">
+                  <div *ngIf="profileform.controls['customer_email'].errors['required']" style="color: red;">Please
+                    Enter Your Email Address </div>
+                  <div *ngIf="profileform.controls['customer_email'].errors['email']" style="color: red;">Please check
+                    your format of Email </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Mob No</label>
+                <input type="text" class="form-control" formControlName="customer_contactno" exampleInputPassword1>
+
+                <div
+                  *ngIf="profileform.controls['customer_contactno'].invalid && (profileform.controls['customer_contactno'].dirty || profileform.controls['customer_contactno'].touched) || validationstatus">
+                  <div *ngIf="profileform.controls['customer_contactno'].errors['required']" style="color: red;">Please
+                    Enter Your contact no </div>
+                  <div *ngIf="profileform.controls['customer_contactno'].errors['pattern']" style="color: red;">Please
+                    enter valid contact no</div>
+                </div>
+
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">District</label>
+                <select class="form-control" formControlName="district_id" aria-label="Default select example">
+                  <option *ngFor="let data of districtdataarray" value="{{data.district_id}}">{{data.district_name}}
+                  </option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Location</label>
+                <select class="form-control" formControlName="location_id" aria-label="Default select example">
+                  <option *ngFor="let data of locationdataarray" value="{{data.location_id}}">{{data.location_name}}
+                  </option>
+                </select>
+              </div>
+
+
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">pin code</label>
+                <input type="text" class="form-control" formControlName="customer_pincode" exampleInputPassword1>
+
+                <div
+                  *ngIf="profileform.controls['customer_pincode'].invalid && (profileform.controls['customer_pincode'].dirty || profileform.controls['customer_pincode'].touched) || validationstatus">
+                  <div *ngIf="profileform.controls['customer_pincode'].errors['required']" style="color: red;">Please
+                    Enter Your pin code </div>
+                  <div *ngIf="profileform.controls['customer_pincode'].errors['pattern']" style="color: red;">Please
+                    enter a valid pincode</div>
+                </div>
+
+              </div>
+
+              <button type="submit" class="btn btn-primary" (click)="Onsubmit()">Submit</button>
+            </form>
+          </div>
+          <!-- </div> -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>

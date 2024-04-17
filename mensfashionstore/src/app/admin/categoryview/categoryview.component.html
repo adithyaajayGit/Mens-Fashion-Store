@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="container-fluid">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title fw-semibold mb-4">Forms</h5>
+          <div class="card">
+            <div class="card-body">
+              <form >
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"> Category View</label>
+                  </div>
+                <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Category Name</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr  *ngFor="let data of categorydata,let i=index">
+                        <td> {{i+1}} </td>
+                        <td> {{data.category_name}} </td>
+                        <td class="text-danger"><img style="width:50px;height:50px;"
+                          src="http://localhost:3000/images/{{data.category_image}}">
+                      </td>
+                        <td>    
+                        <button type="button" class="btn btn-outline-success m-1" [routerLink]="['/adminmaster/editcategory',data.category_id]"><i class="ti ti-edit"></i></button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-outline-danger m-1" (click)="Deletecategorydata(data.category_id)"><i class="ti ti-trash"></i></button>
+
+                        </td>
+                    </tbody>
+                  </table>
+                  <button type="submit" class="btn btn-primary" [routerLink]="['/adminmaster/categoryreg']">ADD</button>
+
+              </form>
+            </div>
+          <!-- </div> -->
+          
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

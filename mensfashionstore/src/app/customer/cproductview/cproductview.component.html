@@ -1,0 +1,60 @@
+<form [formGroup]="productviewform">
+    <section class="latest spad" style="padding-top: 0%;">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="section-title">
+              <h4>CHOOSE BRAND</h4>
+              <br>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"></label>
+                <select class="custom-select" formControlName="brand_id" aria-label="Default select example" (change)="onChange()">
+                  <option *ngFor="let data of branddata" value="{{data.brand_id}}">{{data.brand_name}}</option>
+                </select>
+              </div>
+              <br>
+              <br>
+              <div class="row product__filter">
+                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals" *ngFor="let data of filteredProductData">
+                  <div class="product__item" [routerLink]="['/customermaster/productviewmore', data.product_id]">
+                    <div class="product__item__pic set-bg" data-setbg="" style="background-image: url(&quot;http://localhost:3000/images/{{data.product_image}}&quot;);">
+                      <ul class="product__hover">
+                        <li><a [routerLink]="['/customermaster/productviewmore', data.product_id]"><img src="/assets/customer/img/icon/search.png" alt=""></a></li>
+                      </ul>
+                    </div>
+                    <div class="product__item__text">
+                      <h6>{{data.product_name}}</h6>
+                      <ng-container *ngIf="data.stock > 0; else outOfStockTemplate">
+                        <!-- If stock is greater than 0 -->
+                        <h5>₹ {{data.price}}</h5>
+                        <!-- <div class="product__color__select">
+                          <label for="pc-1">
+                            <input type="radio" id="pc-1">
+                          </label>
+                          <label class="active black" for="pc-2">
+                            <input type="radio" id="pc-2">
+                          </label>
+                          <label class="grey" for="pc-3">
+                            <input type="radio" id="pc-3">
+                          </label>
+                        </div> -->
+                      </ng-container>
+                      <ng-template #outOfStockTemplate>
+                        <!-- If stock is 0 or below -->
+                        <h5 class="out-of-stock">Out of Stock</h5>
+                      </ng-template>
+                      <ng-container *ngIf="data.stock > 0 && data.stock <= 3">
+                        <!-- If stock is less than or equal to 3 -->
+                        <h6 class="only-left">Only {{data.stock}} left</h6>
+                      </ng-container>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </form>
+  
