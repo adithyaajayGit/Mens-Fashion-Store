@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mensfashionstore</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+  <app-root></app-root>
+
+  <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+  <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/sidebarmenu.js"></script>
+  <script src="../assets/js/app.min.js"></script>
+  <script src="../assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+  <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+
+
+  <!-- jQuery -->
+  <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="assets/js/popper.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+
+  <!-- Plugins -->
+  <script src="assets/js/owl-carousel.js"></script>
+  <script src="assets/js/accordions.js"></script>
+  <script src="assets/js/datepicker.js"></script>
+  <script src="assets/js/scrollreveal.min.js"></script>
+  <script src="assets/js/waypoints.min.js"></script>
+  <script src="assets/js/jquery.counterup.min.js"></script>
+  <script src="assets/js/imgfix.min.js"></script> 
+  <script src="assets/js/slick.js"></script> 
+  <script src="assets/js/lightbox.js"></script> 
+  <script src="assets/js/isotope.js"></script> 
+  
+  <!-- Global Init -->
+  <script src="assets/js/custom.js"></script>
+
+  <script>
+
+      $(function() {
+          var selectedClass = "";
+          $("p").click(function(){
+          selectedClass = $(this).attr("data-rel");
+          $("#portfolio").fadeTo(50, 0.1);
+              $("#portfolio div").not("."+selectedClass).fadeOut();
+          setTimeout(function() {
+            $("."+selectedClass).fadeIn();
+            $("#portfolio").fadeTo(50, 1);
+          }, 500);
+              
+          });
+      });
+
+  </script>
+
+<script src="/assets/customer/js/jquery-3.3.1.min.js"></script>
+<script src="/assets/customer/js/bootstrap.min.js"></script>
+<script src="/assets/customer/js/jquery.nice-select.min.js"></script>
+<script src="/assets/customer/js/jquery.nicescroll.min.js"></script>
+<script src="/assets/customer/js/jquery.magnific-popup.min.js"></script>
+<script src="/assets/customer/js/jquery.countdown.min.js"></script>
+<script src="/assets/customer/js/jquery.slicknav.js"></script>
+<script src="/assets/customer/js/mixitup.min.js"></script>
+<script src="/assets/customer/js/owl.carousel.min.js"></script>
+<script src="/assets/customer/js/main.js"></script>
+
+</body>
+
+</html>
+</body>
+</html>
